@@ -128,8 +128,6 @@ body {
         justify-content: space-between;
 
     }
-
-    
         .about {
             display: block;
             max-width: 350px;
@@ -150,12 +148,27 @@ body {
               padding: 0 20px; 
             }
             &__name {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 26px;
+                color: #3E3F58;
             }
         
             &__nickname {
             }
         
             &__editer {
+                
+            }
+            &__editer-link {
+                font-size: 16px;
+                line-height: 20px;
+                text-decoration-line: underline;
+                color: #F05D63;
+                span {
+                    color: #F05D63;
+                }
+                
             }
         
             &__toggler {
@@ -200,6 +213,11 @@ body {
 
             &__counters-count {
                 text-align: center;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 24px;
+                color: #3E3F58;
             }
             &__counters-text {
                 
@@ -289,7 +307,11 @@ body {
             }
         
             &__footer-link {
-                
+                span {
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #F05D63;
+                }   
             }
             .shared {
                 background: #ECF1F8;

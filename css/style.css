@@ -163,6 +163,25 @@ body {
   padding: 0 20px;
 }
 
+.main .about__name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26px;
+  color: #3E3F58;
+}
+
+.main .about__editer-link {
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #F05D63;
+}
+
+.main .about__editer-link span {
+  color: #F05D63;
+}
+
 .main .about__toggler {
   position: absolute;
   top: 0;
@@ -205,6 +224,11 @@ body {
 
 .main .about__counters-count {
   text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #3E3F58;
 }
 
 .main .about__text {
@@ -298,6 +322,12 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.main__postsboard-item .post__footer-link span {
+  font-size: 18px;
+  line-height: 25px;
+  color: #F05D63;
 }
 
 .main__postsboard-item .post .shared {
