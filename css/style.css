@@ -131,7 +131,7 @@ body {
   content: '';
   position: absolute;
   left: 0px;
-  top: 30px;
+  top: 32px;
   width: 43px;
   height: 4px;
   background: linear-gradient(135deg, #FF974F 0%, #E32C75 100%);
