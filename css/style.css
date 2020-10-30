@@ -270,34 +270,62 @@ body {
   margin-bottom: 65px;
 }
 
-.main__public-toggler .public-toggler__button {
-  height: 24px;
-  width: 40px;
-  border-radius: 18px;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: #ED5267;
-  border: 1px solid #ED5267;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-          transform: matrix(-1, 0, 0, 1, 0, 0);
+.main__public-toggler .public-toggler__button[type="checkbox"] {
+  display: none;
 }
 
-.main__public-toggler .public-toggler__button::after {
-  content: '';
+.main__public-toggler .public-toggler__button[type="checkbox"] + label {
+  cursor: pointer;
+  padding-left: 50px;
+  position: relative;
+  font-family: tahoma, sans-serif, arial;
+  line-height: 40px;
+}
+
+.main__public-toggler .public-toggler__button[type="checkbox"] + label::before {
+  content: "";
+  display: inline-block;
   position: absolute;
-  z-index: 2;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+  padding: 0;
+  height: 24px;
+  width: 40px;
+  margin: 0 5px 0 0;
+  border: 1px solid #dadada;
+  border-radius: 12px;
+  background: #dddddd;
+}
+
+.main__public-toggler .public-toggler__button[type="checkbox"] + label::before,
+.main__public-toggler .public-toggler__button[type="checkbox"] + label::after {
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.main__public-toggler .public-toggler__button[type="checkbox"] + label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 1px;
   width: 18px;
   height: 18px;
-  left: 2px;
-  top: 2px;
   border-radius: 50%;
-  background: #ffffff;
-  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-          transform: matrix(-1, 0, 0, 1, 0, 0);
+  background: #fff;
+  border: 1px solid #dadada;
+  -webkit-box-shadow: 0 3px 3px rgba(140, 140, 140, 0.1);
+          box-shadow: 0 3px 3px rgba(140, 140, 140, 0.1);
+}
+
+.main__public-toggler .public-toggler__button[type="checkbox"]:checked + label::before {
+  background: #ED5267;
+  background: #ED5267;
+}
+
+.main__public-toggler .public-toggler__button[type="checkbox"]:checked + label::after {
+  left: 20px;
 }
 
 .main__postsboard-item .post {
