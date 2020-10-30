@@ -15,7 +15,7 @@ body {
 }
 
 
-.container{
+.container {
     max-width: 1440px;
     display: flex;
     padding: 23px 135px;
@@ -32,14 +32,8 @@ body {
     height: 112px;
     background: #FFFFFF;
     box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.06);
-    
-
-  
-    
-    
 
     &__nav {
-        
     }
 
     &__logo {
@@ -47,7 +41,7 @@ body {
     }
 
     &__profile {
-        .profile{
+        .profile {
             display: flex;
             justify-content: space-around;
 
@@ -97,7 +91,7 @@ body {
             right: 30px;
             top: 22px;
             background: #FFFFFF;
-            &::after{
+            &::after {
                 content: '';
                 position: absolute;
                 width: 1.82px;
