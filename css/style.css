@@ -9,8 +9,25 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+* a {
+  display: inline-block;
+}
+
 body {
   background: #F2F2F2;
+}
+
+.container {
+  max-width: 1440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 23px 135px;
+  margin: 0 auto;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header {
@@ -22,22 +39,6 @@ body {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.06);
           box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.06);
-}
-
-.header__container {
-  max-width: 1440px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 23px 135px;
-  margin: 0 auto;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .header__logo {
@@ -53,33 +54,35 @@ body {
 }
 
 .header__profile .profile__name {
-  padding: 7px 15px;
+  margin: 7px 25px;
 }
 
 .header__profile .profile__logo {
-  padding-right: 10px;
+  margin-right: 10px;
   position: relative;
 }
 
-.header__profile .profile__logo-toggler {
+.header__profile .profile__toggler {
   position: absolute;
-  right: -15px;
+  right: -25px;
   top: 7px;
+  fill: grey;
 }
 
 .header__profile .profile__icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 40px;
-  padding-top: 7px;
+  margin-left: 40px;
+  margin-top: 7px;
 }
 
 .header__profile .profile__icons-item {
-  padding-right: 10px;
+  margin-right: 10px;
 }
 
-.header__button {
+.header__button-link {
+  display: inline-block;
   position: absolute;
   width: 64px;
   height: 64px;
@@ -115,28 +118,30 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  position: relative;
 }
 
 .nav__item {
-  padding-right: 30px;
+  margin-right: 30px;
 }
 
-.main__container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 73px 135px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.nav .active ::after {
+  content: '';
+  position: absolute;
+  right: 100px;
+  top: 150px;
+  bottom: 0%;
+  background: linear-gradient(135deg, #FF974F 0%, #E32C75 100%);
+}
+
+.main {
+  margin-top: 72px;
 }
 
 .main .about {
   display: block;
   max-width: 350px;
-  padding-right: 47px;
+  margin-right: 47px;
   margin-bottom: 47px;
 }
 
@@ -182,29 +187,33 @@ body {
   color: #F05D63;
 }
 
-.main .about__toggler {
-  position: absolute;
-  top: 0;
-  right: -150px;
-}
-
 .main .about__menu {
+  display: none;
+  position: absolute;
+  min-width: 176px;
   background: #FFFFFF;
   opacity: 0.94;
   border-radius: 8px;
-  padding: 24px;
 }
 
-.main .about__menu-item {
-  padding-bottom: 15px;
+.main .about__toggler {
+  position: absolute;
+  top: 0;
+  right: -50px;
+}
+
+.main .about__menu-list {
+  padding: 24px 0;
 }
 
 .main .about__menu-item :hover {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background: #6190d1;
+  background: #c0c0c0;
   opacity: 0.6;
-  color: #000;
+}
+
+.main .about__menu-link {
+  width: 100%;
+  padding: 8px 24px;
 }
 
 .main .about__counters {
@@ -240,13 +249,55 @@ body {
   display: block;
 }
 
-.main__postsboard-group {
+.main .postsboard-group {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(320px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 24px;
   grid-auto-rows: 1fr;
+}
+
+.main__public-toggler .public-toggler {
+  max-width: 202px;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 65px;
+}
+
+.main__public-toggler .public-toggler__button {
+  height: 24px;
+  width: 40px;
+  border-radius: 18px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ED5267;
+  border: 1px solid #ED5267;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.main__public-toggler .public-toggler__button::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+          transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .main__postsboard-item .post {
@@ -270,7 +321,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 10px;
 }
 
 .main__postsboard-item .post__header-link {
@@ -284,6 +334,7 @@ body {
   font-size: 36px;
   line-height: 44px;
   color: #3E4056;
+  margin-top: 56px;
   margin-bottom: 46px;
 }
 
@@ -345,22 +396,40 @@ body {
 }
 
 @media screen and (max-width: 992px) {
-  .header__container {
+  .header .container {
     padding: 25px;
   }
-  .main__container {
+  .main .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 73px 25px;
+  }
+  .profile {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .profile {
+  .profile .profile__name {
+    margin: 0;
+  }
+  .profile .profile__logo {
+    margin-left: 15px;
+    margin-top: 15px;
+    position: relative;
+  }
+  .profile .profile__toggler {
+    position: absolute;
+    left: 50px;
+    top: 7px;
+  }
+  .profile .profile__icons {
     display: none;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .main__container {
-    padding: 73px 25px;
-  }
+.about__toggler:hover .about__menu {
+  display: block;
 }

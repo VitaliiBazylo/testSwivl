@@ -7,8 +7,21 @@
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
+* a {
+    display: inline-block;
+}
 body {
     background: #F2F2F2;
+}
+
+
+.container{
+    max-width: 1440px;
+    display: flex;
+    padding: 23px 135px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;   
 }
 
 .header {
@@ -21,16 +34,7 @@ body {
     box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.06);
     
 
-    &__container{
-        max-width: 1440px;
-        display: flex;
-        justify-content: center;
-        padding: 23px 135px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        
-    }
+  
     
     
 
@@ -49,45 +53,43 @@ body {
 
 
             &__name {
-                padding: 7px 15px;
-                // padding-right: 10px;
-                // padding-top: 7px;
+                margin: 7px 25px;
             }
         
             &__logo {
-                padding-right: 10px;
+                margin-right: 10px;
                 position: relative;
             }
         
-            &__logo-image {
-            }
-        
-            &__logo-toggler {
+            &__toggler {
                 position: absolute;
-                right: -15px;
+                right: -25px;
                 top: 7px;
+                fill: grey;
             }
         
             &__icons {
                 display: flex;
-                padding-left: 40px;
-                padding-top: 7px;
+                margin-left: 40px;
+                margin-top: 7px;
                 &-item {
-                    padding-right: 10px;
+                    margin-right: 10px;
                 }
             }   
         }
     }
 
     &__button {
-        position: absolute;
-        width: 64px;
-        height: 64px;
-        right: 140px;
-        top: 80px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #FF974F 0%, #E32C75 100%);
-        
+        &-link {
+            display: inline-block;
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            right: 140px;
+            top: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FF974F 0%, #E32C75 100%);
+        }
         &-icon {
             position: absolute;
             width: 1.82px;
@@ -109,29 +111,28 @@ body {
 .nav {
     display: flex;
     justify-content: space-evenly;
+    position: relative;
     &__item {
-        padding-right: 30px;
+        margin-right: 30px;
     }
-
-    &__item-link {
+    .active {
+        ::after {
+            content: '';
+            position: absolute;
+            right: 100px;
+            top: 150px;
+            bottom: 0%;
+            background: linear-gradient(135deg, #FF974F 0%, #E32C75 100%);
+        }
     }
 }
 
 .main {
-    
-
-    &__container {
-        max-width: 1440px;
-        margin: 0 auto;
-        padding: 73px 135px;
-        display: flex;
-        justify-content: space-between;
-
-    }
+    margin-top: 72px;
         .about {
             display: block;
             max-width: 350px;
-            padding-right: 47px;
+            margin-right: 47px;
             margin-bottom: 47px;
             &__logo {
             }
@@ -170,36 +171,40 @@ body {
                 }
                 
             }
-        
-            &__toggler {
-                position: absolute;
-                top: 0;
-                right: -150px;
-            }
-        
             &__menu {
+                display: none;
+                position: absolute;
+                min-width: 176px;
                 background: #FFFFFF;
                 opacity: 0.94;
                 border-radius: 8px;
-                padding: 24px;
                 
             }
+
+            &__toggler {
+                
+                position: absolute;
+                top: 0;
+                right: -50px;
+            }
+        
+           
         
             &__menu-list {
+                padding: 24px 0;
             }
         
             &__menu-item {
-                padding-bottom: 15px;
                 :hover {
-                    box-sizing: border-box;
-                    background: #6190d1;
+                    background: #c0c0c0;
                     opacity: 0.6;
-                    color: #000;
                 }
             }
-        
-            &__menu-text {
+            &__menu-link {
+                width: 100%;
+                padding: 8px 24px;
             }
+
         
             &__counters {
                 margin-bottom: 25px;
@@ -234,16 +239,48 @@ body {
         }
     
 
-    &__postsboard {
-        
-    }
 
     
-    &__postsboard-group {
+    .postsboard-group {
         display: grid; 
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-gap: 24px;
         grid-auto-rows: 1fr;
+    }
+    &__public-toggler {
+        .public-toggler {
+            max-width: 202px;
+            position: relative;
+            justify-content: space-between;
+            display: flex;
+            margin-bottom: 65px;
+
+            &__button {
+                height: 24px;
+                width: 40px;
+                border-radius: 18px;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background: #ED5267;
+                border: 1px solid #ED5267;
+                box-sizing: border-box;
+                transform: matrix(-1, 0, 0, 1, 0, 0);
+                &::after {
+                    content: '';
+                    position: absolute;
+                    z-index: 2;
+                    width: 18px;
+                    height: 18px;
+                    left: 2px;
+                    top: 2px;
+                    border-radius: 50%;
+                    background: #ffffff;
+                    transform: matrix(-1, 0, 0, 1, 0, 0);
+                }
+            }
+        }
     }
     &__postsboard-item {
         .post {
@@ -253,12 +290,11 @@ body {
             padding: 24px;
             background: #FFFFFF;
             border-radius: 8px;
-            // max-width: 374px;
+            
             min-height: 280px;
 
             &__header {
                 display: flex;
-                margin-bottom: 10px;
             }
             &__header-title {
             }
@@ -274,6 +310,7 @@ body {
                 font-size: 36px;
                 line-height: 44px;
                 color: #3E4056;
+                margin-top: 56px;
                 margin-bottom: 46px;
             }
         
@@ -332,20 +369,46 @@ body {
 }
 
 @media screen and (max-width: 992px) {
-    .header__container {
+    .header .container {
         padding: 25px;
-    } 
-    .main__container {
+    }
+    .main .container {
         flex-direction: column;
+        padding: 73px 25px;
     }
     .profile {
-        display: none;
+        flex-direction: column;
+
+
+        .profile__name {
+            margin: 0;
+        }
+    
+        .profile__logo {
+            margin-left: 15px;
+            margin-top: 15px;
+            position: relative;
+        }
+    
+        .profile__toggler {
+            position: absolute;
+            left: 50px;
+            top: 7px;
+        }
+    
+        .profile__icons {
+            display: none;
+           
+        }   
     }
 }
 
 @media screen and (max-width: 600px) {
-    .main__container {
-        padding: 73px 25px;
-    }
+    
 }
 
+.about__toggler:hover {
+    .about__menu {
+         display: block;
+        }     
+}
