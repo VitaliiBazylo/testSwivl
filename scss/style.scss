@@ -16,11 +16,10 @@ body {
 
 
 .container {
-    max-width: 1440px;
+    max-width: 1170px;
     display: flex;
-    padding: 23px 135px;
+    padding: 23px 0;
     margin: 0 auto;
-    display: flex;
     justify-content: space-between;   
 }
 
@@ -176,7 +175,7 @@ body {
             }
 
             &__toggler {
-                
+                cursor: pointer;
                 position: absolute;
                 top: 0;
                 right: -50px;
@@ -362,6 +361,7 @@ body {
             &__footer-counters {
                 display: flex;
                 justify-content: space-between;
+                
                 
             }
         
