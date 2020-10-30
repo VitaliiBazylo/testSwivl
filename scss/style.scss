@@ -139,7 +139,7 @@ body {
               justify-content: space-between;
               max-height: 120px;
               position: relative; 
-              padding: 0 20px; 
+              margin: 0 20px; 
             }
             &__name {
                 font-weight: 600;
@@ -209,7 +209,7 @@ body {
             &__counters-item {
                 display: flex;
                 flex-direction: column;
-                padding-right: 50px;
+                margin-right: 50px;
                 text-align: center;
             }
 
@@ -311,13 +311,16 @@ body {
             min-height: 280px;
 
             &__header {
+                position: absolute;
                 display: flex;
             }
             &__header-title {
+                
             }
         
             &__header-link {
-                padding-left: 10px;
+                
+                margin-left: 10px;
             }
         
             &__text {
@@ -348,7 +351,7 @@ body {
                 background: #B2B3BB;
             }
             &__footer-name {
-                padding-left: 8px;
+                margin-left: 8px;
             }
         
             &__footer-share {
@@ -357,12 +360,14 @@ body {
                 text-align: right;
                 color: #F05D63;
             }
-        
+
+            &__counter {
+                margin-left: 8px;
+            } 
+
             &__footer-counters {
                 display: flex;
-                justify-content: space-between;
-                
-                
+                justify-content: space-between;   
             }
         
             &__footer-link {
@@ -378,9 +383,10 @@ body {
             }
         
             &__footer-counter {
-                padding-left: 16px;
+                display: flex;
+                align-items: center;
+                margin-left: 16px;
             }
-        
             
         }
     }

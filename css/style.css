@@ -164,7 +164,7 @@ body {
           justify-content: space-between;
   max-height: 120px;
   position: relative;
-  padding: 0 20px;
+  margin: 0 20px;
 }
 
 .main .about__name {
@@ -232,7 +232,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-right: 50px;
+  margin-right: 50px;
   text-align: center;
 }
 
@@ -346,13 +346,14 @@ body {
 }
 
 .main__postsboard-item .post__header {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .main__postsboard-item .post__header-link {
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .main__postsboard-item .post__text {
@@ -389,7 +390,7 @@ body {
 }
 
 .main__postsboard-item .post__footer-name {
-  padding-left: 8px;
+  margin-left: 8px;
 }
 
 .main__postsboard-item .post__footer-share {
@@ -397,6 +398,10 @@ body {
   line-height: 25px;
   text-align: right;
   color: #F05D63;
+}
+
+.main__postsboard-item .post__counter {
+  margin-left: 8px;
 }
 
 .main__postsboard-item .post__footer-counters {
@@ -420,7 +425,13 @@ body {
 }
 
 .main__postsboard-item .post__footer-counter {
-  padding-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 16px;
 }
 
 @media screen and (max-width: 992px) {
